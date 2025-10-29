@@ -28,9 +28,9 @@
               <div class="blog__slide__img">
                 {% if post.image_url %}
                   <img class="card-img rounded-0" src="{{ post.image_url }}" alt="{{ post.title }}">
-                    {% else %}
-                      <img class="card-img rounded-0" src="{% static 'img/banner/blog.png' %}" alt="{{ post.title }}">
-                    {% endif %}
+                {% else %}
+                  <img class="card-img rounded-0" src="{% static 'img/banner/blog.png' %}" alt="{{ post.title }}">
+                {% endif %}
               </div>
               <div class="blog__slide__content">
                 <h3><a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></h3>
@@ -54,17 +54,17 @@
               <div class="thumb">
                 {% if post.image_url %}
                   <img class="img-fluid" src="{{ post.image_url }}" alt="{{ post.title }}">
-                    {% else %}
-                      <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="{{ post.title }}">
-                        {% endif %}
-                          <ul class="thumb-info">
-                            <li><a href="#"><i class="ti-user"></i>{{ post.author }}</a></li>
-                            <li><a href="#"><i class="ti-notepad"></i>{{ post.published_at|date:"F d, Y, h:i a" }}</a></li>
-                            <li><a href="#"><i class="ti-themify-favicon"></i>{{ post.comments_amount }} Comments</a></li>
-                          </ul>
+                {% else %}
+                  <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="{{ post.title }}">
+                {% endif %}
+                <ul class="thumb-info">
+                  <li><a href="#"><i class="ti-user"></i>{{ post.author }}</a></li>
+                  <li><a href="#"><i class="ti-notepad"></i>{{ post.published_at|date:"F d, Y, h:i a" }}</a></li>
+                  <li><a href="#"><i class="ti-themify-favicon"></i>{{ post.comments_amount }} Comments</a></li>
+                </ul>
               </div>
               <div class="details mt-20">
-                <h3> {{ post.title }} </h3>
+                <h3>{{ post.title }}</h3>
                 <p>{{ post.text|truncatechars:200 }}</p>
                 <a class="button" href="{% url 'post_detail' post.slug %}">Read More <i class="ti-arrow-right"></i></a>
               </div>
@@ -97,7 +97,7 @@
           </div>
         </div>
 
-        <!-- Start Blog Post Siddebar -->
+        <!-- Start Blog Post Sidebar -->
         <div class="col-lg-4 sidebar-widgets">
           <div class="widget-wrap">
             <div class="single-sidebar-widget newsletter-widget">
@@ -112,7 +112,7 @@
             </div>
           </div>
         </div>
-        <!-- End Blog Post Siddebar -->
+        <!-- End Blog Post Sidebar -->
       </div>
     </div>
   </section>
